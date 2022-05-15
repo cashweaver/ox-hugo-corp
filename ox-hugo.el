@@ -3674,8 +3674,8 @@ INFO is a plist holding export options."
                                          fm)))
     (setq org-hugo--fm fm)
     (if (org-hugo--pandoc-citations-enabled-p info)
-        (format "%s%s%s" org-hugo--fm-yaml body org-hugo-footer)
-      (format "%s%s%s" fm body org-hugo-footer))))
+        (format "%s%s" body org-hugo-footer)
+      (format "%s%s" body org-hugo-footer))))
 
 ;;;;; Hugo Front-Matter
 (defun org-hugo--parse-property-arguments (str)
