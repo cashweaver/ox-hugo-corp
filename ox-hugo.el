@@ -1253,15 +1253,18 @@ INFO is a plist used as a communication channel."
   (let* ((base-dir (if (plist-get info :hugo-base-dir)
                        (file-name-as-directory (plist-get info :hugo-base-dir))
                      (user-error "It is mandatory to set the HUGO_BASE_DIR property or the `org-hugo-base-dir' local variable")))
-         (content-dir "content/")
-         (section-path (org-hugo--get-section-path info))
+         ;; (content-dir "content/")
+         ;; (section-path (org-hugo--get-section-path info))
          (bundle-dir (let ((bundle-path (or ;Hugo bundle set in the post subtree gets higher precedence
                                          (org-hugo--entry-get-concat nil "EXPORT_HUGO_BUNDLE" "/")
                                          (plist-get info :hugo-bundle)))) ;This is mainly to support per-file flow
                        (if bundle-path
                            (file-name-as-directory bundle-path)
                          "")))
-         (pub-dir (let ((dir (concat base-dir content-dir section-path bundle-dir)))
+         (pub-dir (let ((dir (concat base-dir
+                                     ;; content-dir
+                                     ;; section-path
+                                     bundle-dir)))
                     (make-directory dir :parents) ;Create the directory if it does not exist
                     dir)))
     (file-truename pub-dir)))
