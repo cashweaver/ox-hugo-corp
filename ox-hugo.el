@@ -734,7 +734,7 @@ bibliography heading auto-injection is not done."
                    (:with-sub-superscript nil "^" '{}) ;Require curly braces to be wrapped around text to sub/super-scripted
                    (:hugo-with-locale "HUGO_WITH_LOCALE" nil nil)
                    (:hugo-front-matter-format "HUGO_FRONT_MATTER_FORMAT" nil     org-hugo-front-matter-format)
-                   (:hugo-level-offset "HUGO_LEVEL_OFFSET" nil "1")
+                   (:hugo-level-offset "HUGO_LEVEL_OFFSET" nil "0")
                    (:hugo-preserve-filling "HUGO_PRESERVE_FILLING" nil org-hugo-preserve-filling) ;Preserve breaks so that text filling in Markdown matches that of Org
                    (:hugo-delete-trailing-ws "HUGO_DELETE_TRAILING_WS" nil org-hugo-delete-trailing-ws)
                    (:hugo-section "HUGO_SECTION" nil org-hugo-section)
