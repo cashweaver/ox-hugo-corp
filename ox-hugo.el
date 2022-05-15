@@ -2666,7 +2666,7 @@ and rewrite link paths to make blogging more seamless."
                                  anchor
                                (concat path anchor))))
                    ;; (message "[org-hugo-link DBG] plain-text org-id anchor: %S" anchor)
-                   (format "[%s]({{< relref \"%s\" >}})" (or desc path) ref))
+                   (format "[%s](%s)" (or desc path) ref))
                (if desc
                    (format "[%s](%s)" desc path)
                  (format "<%s>" path)))))
@@ -2958,10 +2958,10 @@ and rewrite link paths to make blogging more seamless."
                             ;; the "anchor" is actually the post's
                             ;; slug.
                             ((and (org-string-nw-p anchor) (not (string-prefix-p "#" anchor)))
-                             (format "{{< relref \"%s\" >}}" anchor))
+                             (format "%s" anchor))
                             ;; Link to a non-post subtree, like a subheading in a post.
                             ((or (org-string-nw-p ref) (org-string-nw-p anchor))
-                             (format "{{< relref \"%s%s\" >}}" ref anchor))
+                             (format "%s%s" ref anchor))
                             (t
                              ""))))
                         (t ;; attachments like foo.png
