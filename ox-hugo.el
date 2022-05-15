@@ -3664,8 +3664,9 @@ INFO is a plist holding export options."
                 ;; (message "[body filter DBG] line at pt: %s" (thing-at-point 'line))
                 (org-hugo--get-front-matter info))))
         (fm-extra (plist-get info :fm-extra))
-        (body (if (org-string-nw-p body) ;Insert extra newline if body is non-empty
-                  (format "\n%s" body)
+        (body (if (org-string-nw-p body)
+                  ;; (format "\n%s" body)
+                  body
                 "")))
     ;; (message "[body filter DBG fm] %S" fm)
     ;; (message "[body filter DBG fm-extra] %S" fm-extra)
