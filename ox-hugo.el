@@ -2363,7 +2363,7 @@ string.
 
 Optional argument NUMBERS, if non-nil, is an htmlized string
 containing the TITLE's number."
-  (let ((heading (concat todo numbers title tags " " anchor "\n")))
+  (let ((heading (concat todo numbers title tags "\n")))
     ;; Use "Setext" style
     (if (and (eq style 'setext) (< level 3))
         (let* ((underline-char (if (= level 1) ?= ?-))
